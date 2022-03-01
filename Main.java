@@ -3,15 +3,22 @@ import java.util.*;
 import static java.lang.Math.*;
 
 public class Main {
+	static Reader fs;
+	static PrintWriter pw;
+	
+	static void solve() throws IOException{
+		
+	}
+
 	public static void main(String args[]) throws Exception{
-		Reader fs = new Reader();
-		PrintWriter pw = new PrintWriter(System.out);
-		int n = fs.nextInt();
-		int a[] = new int[n];
-		for(int i = 0 ; i < n ; i++) {
-			a[i] = fs.nextInt();
+		System.setErr(new PrintStream("error.txt"));
+		fs = new Reader();
+		pw = new PrintWriter(System.out);
+		int t = 1;
+		t = fs.nextInt();
+		while(t-- > 0) {
+			solve();
 		}
-		for(int x : a) System.out.print(x + " ");
 		pw.close();
 	}
 
@@ -44,6 +51,12 @@ public class Main {
 		long nextLong() throws IOException { 
 			check();
 			return Long.parseLong(st.nextToken());
+		}
+
+		int [] readArray(int n) throws IOException{
+			int a[] = new int[n];
+			for(int i = 0 ; i < n ;i++) a[i] = nextInt();
+			return a;
 		}
 
 		String next() throws IOException {
